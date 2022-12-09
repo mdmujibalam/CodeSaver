@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 const config=require('config');
 const connectDB = async() => {
-    await mongoose.connect(config.get('mongodb://127.0.0.1:27017/node_auth'),{
+    await mongoose.connect(config.get(process.env.DATABASE_CONNECTION),{
         useNewUrlParser:true,
         useCreateIndex:true,
         useUnifiedTopology:true,
